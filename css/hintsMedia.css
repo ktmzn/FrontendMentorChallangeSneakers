@@ -1,0 +1,123 @@
+/* @media (max-width: 1321px) and (min-width: 1000px) {} */
+@media (max-width: 1000px) and (min-width: 800px) {
+  .enlarged {
+    top: 3rem;
+  }
+  .enlarged__cross {
+    top: -2rem;
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+  .enlarged__current_wrapper {
+    gap: 0;
+  }
+  .enlarged__left-arrow{
+    left: -1rem;
+  }
+  .enlarged__right-arrow{
+    right: -1rem;
+  }
+  .enlarged__left-arrow,
+  .enlarged__right-arrow{
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+  }
+  .enlarged__image-current{
+    width: 25rem;
+  }
+  .enlarged__image-current img{
+    width: 100%; 
+  }
+  .enlarged__hints {
+    margin-top: 1rem;
+  }
+  .enlarged__hint-1,
+  .enlarged__hint-2,
+  .enlarged__hint-3,
+  .enlarged__hint-4 {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+@media (max-width: 799px) and (min-width: 500px) {
+  .enlarged {
+    top: 15vw;
+  }
+  .enlarged__cross {
+    top: -2rem;
+    width: 1rem;
+    height: 1rem;
+  }
+  .enlarged__current_wrapper {
+    gap: 0;
+  }
+  .enlarged__left-arrow{
+    left: -1rem;
+  }
+  .enlarged__right-arrow{
+    right: -1rem;
+  }
+  .enlarged__left-arrow,
+  .enlarged__right-arrow{
+    width: 2rem;
+    height: 2rem;
+    transform: scale(70%);
+  }
+  .enlarged__image-current{
+    width: 30vw;
+  }
+  .enlarged__hints {
+    margin-top: 1rem;
+  }
+  .enlarged__hint-1,
+  .enlarged__hint-2,
+  .enlarged__hint-3,
+  .enlarged__hint-4 {
+    width: 30px;
+    height: 30px;
+  }
+  .enlarged__hint-1 img,
+  .enlarged__hint-2 img,
+  .enlarged__hint-3 img,
+  .enlarged__hint-4 img {
+    border-radius: 0.5rem;
+  }
+}
+
+@media (max-width: 499px) {
+  .enlarged {
+    display: block;
+    width: 100vw;
+    position: relative;
+    top: 0;
+  }
+  .enlarged__cross {
+    display: none;
+  }
+  .enlarged__current_wrapper {
+    gap: 0;
+  }
+  .enlarged__left-arrow{
+    left: 5px;
+  }
+  .enlarged__right-arrow{
+    right: 5px;
+  }
+  .enlarged__left-arrow,
+  .enlarged__right-arrow{
+    width: 3rem;
+    height: 3rem;
+  }
+  .enlarged__image-current{
+    margin: 0 auto;
+    width: 100vw;
+  }
+  .enlarged__image-current img{
+    border-radius: 0;
+  }
+  .enlarged__hints {
+    display: none;
+  }
+}
