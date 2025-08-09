@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/headerMedia.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/mainMedia.css">
+  <link rel="stylesheet" href="./css/hints.css">
+  <link rel="stylesheet" href="./css/hintsMedia.css">
+  <title>Frontend Mentor | E-commerce product page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <div class="header__wrapper">
+        <div class="header__menu">
+          <img src="images/icon-menu.svg" alt="menu" id="burger-menu-button">
+          <img src="images/icon-close.svg" alt="close" class="d-none" id="burger-menu-close">
+        </div>
+        <div class="header__title">
+          <img src="images/logo.svg" alt="logo">
+        </div>
+        <nav class="header__nav">
+          <div class="nav__elem">Collections</div>
+          <div class="nav__elem">Men</div>
+          <div class="nav__elem">Women</div>
+          <div class="nav__elem">About</div>
+          <div class="nav__elem">Contact</div>
+        </nav>
+        <div class="header__shopping-cart">
+          <img src="images/icon-cart.svg" alt="cart" id="cart-button">
+          <div class="shopping-cart__settings">
+            <div class="shopping-cart__text">Cart</div>
+            <div class="shopping-cart__line"></div>
+            <div class="shopping-cart__products">
+              <span class="empty-cart">Your cart is empty.</span>   
+              <div class='products__container d-none'>
+                <div class="products__wrapper">
+                  <div class="products__image">
+                    <img src="../images/image-product-1-thumbnail.jpg" alt="product-image">
+                  </div>
+                  <div class="products__text">
+                    <div class="products__text_title">
+                      Fall Limited Edition  Sneakers
+                    </div>
+                    <div class="products__text_price">
+                      <span class="price__currency">$125.00 x </span><span class="price__amount">0</span> <span class="price__all"> $0</span>
+                    </div>
+                    <!--${price.toFixed(2)}  ${amount} ${cost.toFixed(2)} -->
+                  </div>
+                  <div class="products__trash-image">
+                    <img src="images/icon-delete.svg" alt="icon-delete" id="delete-from-cart-button" onclick='deleteFromCart()'>
+                  </div>
+                </div>
+                <div class="products__button">
+                  <button type="button">Check out</button>
+                </div> 
+              </div>         
+            </div>
+          </div>
+        </div>
+        <div class="header__account">
+          <img src="images/image-avatar.png" alt="image-avatar">
+        </div>
+      </div>
+      <div class="header__line"></div>
+    </header>
+    <div class="enlarged">
+      <div class="enlarged__current_wrapper">
+        <div class="enlarged__left-arrow"></div>
+        
+        <div class="enlarged__image-current">
+          <div class="enlarged__cross"></div>
+          <img src="images/image-product-1.jpg" alt="image-current" id="image-lightbox-current">
+        </div>
+
+        <div class="enlarged__right-arrow"></div>
+      </div>
+
+      <div class="enlarged__hints">
+        <div class="enlarged__hint-1">
+          <img src="images/image-product-1-thumbnail.jpg" alt="image-product-1-thumbnail1" id="hint-1">
+        </div>
+
+        <div class="enlarged__hint-2" >
+          <img src="images/image-product-2-thumbnail.jpg" alt="image-product-2-thumbnail2" id="hint-2">
+        </div>
+
+        <div class="enlarged__hint-3">
+          <img src="images/image-product-3-thumbnail.jpg" alt="image-product-3-thumbnail3" id="hint-3">
+        </div>
+        
+        <div class="enlarged__hint-4">
+          <img src="images/image-product-4-thumbnail.jpg" alt="image-product-4-thumbnail4" id="hint-4">
+        </div>
+        
+      </div>
+    </div>
+
+    <main class="main">
+      <div class="main__cards">
+        <div class="cards__current">
+          <img src="images/image-product-1.jpg" alt="image-current" id="image-current">
+        </div>
+        <div class="cards__hints">
+          <div class="hints__elem">
+            <img src="images/image-product-1-thumbnail.jpg" alt="image-product-1-thumbnail">
+          </div>
+          <div class="hints__elem">
+            <img src="images/image-product-2-thumbnail.jpg" alt="image-product-2-thumbnail">
+          </div>
+          <div class="hints__elem">
+            <img src="images/image-product-3-thumbnail.jpg" alt="image-product-3-thumbnail">
+          </div>
+          <div class="hints__elem">
+            <img src="images/image-product-4-thumbnail.jpg" alt="image-product-4-thumbnail">
+          </div>
+        </div>
+      </div>
+      <div class="main__description">
+        <div class="main__company">Sneaker Company</div>
+        <div class="main__feature">
+          <div class="feature__title">Fall Limited Edition Sneakers</div>
+          <div class="feature__desc">
+            These low-profile sneakers are your perfect casual wear companion. Featuring a 
+            durable rubber outer sole, they’ll withstand everything the weather can offer.
+          </div>
+          <div class="feature__price">
+            <div class="feature__wrapper">
+              <div class="feature__price-current">$125.00</div>
+              <div class="feature__sale">50%</div>
+            </div>
+            <div class="feature__price-previous">$250.00</div>
+          </div>
+        </div>
+        <div class="main__button_buy">
+          <div class="button__amount">
+            <div class="button__amount_minus" id="minus-button">
+              <img src="images/icon-minus.svg" alt="icon-minus">
+            </div>
+            <div class="button__amount_number" id="counter">0</div>
+            <div class="button__amount_plus" id="plus-button">
+              <img src="images/icon-plus.svg" alt="icon-plus">
+            </div>
+          </div>
+          <div class="button__add">
+            <img src="images/icon-cart.svg" alt="icon-cart">
+            Add to cart
+          </div>
+        </div>
+      </div>
+    </main>
+  
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Kt Mzn</a>.
+    </div>
+  </div>
+
+  <div class="overlay"></div>
+
+  <script src="scripts/adaptive.js"></script>
+  <script src="scripts/counter.js"></script>
+  <script src="scripts/imageChangerMain.js"></script>
+  <script src="scripts/imageChangerHints.js"></script>
+  <script src="scripts/cart.js"></script>
+  <script src="scripts/showCart.js"></script>
+  <script src="scripts/lightbox.js"></script>
+  <script src="scripts/arrows.js"></script>
+  <script src="scripts/burgerMenu.js"></script>
+</body>
+</html>
